@@ -2,6 +2,11 @@
 
 AWS Lambda to blurs objects detected by [AWS Rekognition](https://aws.amazon.com/rekognition/).
 
+![](https://github.com/veelenga/aws-lambda-blur-by-rekognition-label/blob/master/assets/demo.jpeg)
+<sup>
+ [Credits <unsplash.com>](https://unsplash.com/photos/_dR2NANY4o)
+</sup>
+
 ## Usage
 
 ``` sh
@@ -10,7 +15,7 @@ $ AWS_ACCESS_KEY_ID=xxx \
   AWS_SECRET_ACCESS_KEY=xxx \
   REKOGNITION_LABELS="house, person" \
   S3_BUCKET_NAME=person-blurring \
-  S3_OBJECT_KEY=samples/baucam-007-2020-09-23_08_20_02.521.jpg \
+  S3_OBJECT_KEY=samples/photo-1600897457790-4ee13456bfc5.jpeg \
   ./run.sh
 ```
 
