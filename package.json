@@ -1,0 +1,21 @@
+{
+  "name": "aws-lambda-blur-by-rekognition-labels",
+  "version": "1.0.0",
+  "description": "AWS Lambda to blurs objects detected by AWS Rekognition",
+  "author": "Vitalii Elenhaupt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veelenga/aws-lambda-blur-by-rekognition-labels"
+  },
+  "keywords": [
+    "aws",
+    "lambda",
+    "rekognition",
+    "blurring"
+  ],
+  "dependencies": {
+    "async": "^3.5.0",
+    "gm": "^1.23.0"
+  }
+}
