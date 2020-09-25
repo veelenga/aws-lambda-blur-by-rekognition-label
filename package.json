@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/veelenga/aws-lambda-blur-by-rekognition-labels"
   },
+  "config": {
+    "layers": [
+      "arn:aws:lambda:eu-west-1:175033217214:layer:graphicsmagick:2",
+      "arn:aws:lambda:eu-west-1:634218133813:layer:image-magick:1"
+    ]
+  },
   "keywords": [
     "aws",
     "lambda",
@@ -15,7 +21,7 @@
     "blurring"
   ],
   "dependencies": {
-    "async": "^3.5.0",
+    "async": "^3.2.0",
     "gm": "^1.23.0"
   }
 }
