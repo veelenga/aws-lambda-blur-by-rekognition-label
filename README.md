@@ -32,3 +32,8 @@ Lambda environment can be configured using [env variables](https://docs.aws.amaz
 ## Deployment
 
 [AWS Lambda deployment package in Node.js](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-package.html)
+
+Required layers to install:
+
+ * ImageMagick - https://github.com/serverlesspub/imagemagick-aws-lambda-2
+ * GraphicsMagick - https://github.com/rpidanny/gm-lambda-layer
