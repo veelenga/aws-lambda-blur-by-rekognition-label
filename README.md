@@ -33,7 +33,13 @@ Lambda environment can be configured using [env variables](https://docs.aws.amaz
 
 [AWS Lambda deployment package in Node.js](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-package.html)
 
-Required layers to install:
+### Dependent layers
 
  * ImageMagick - https://github.com/serverlesspub/imagemagick-aws-lambda-2
  * GraphicsMagick - https://github.com/rpidanny/gm-lambda-layer
+
+### Required configuration
+
+* must have the execution role which has permissions to use AWS Rekognition
+* must have the execution role which has permissions to read and write to S3 bucket
+* must have the S3 trigger which doesn't lead to recursive invocation
