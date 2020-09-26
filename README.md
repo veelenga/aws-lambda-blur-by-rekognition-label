@@ -11,7 +11,8 @@ AWS Lambda to blurs objects detected by [AWS Rekognition](https://aws.amazon.com
 
 ``` sh
 $ npm install
-$ AWS_ACCESS_KEY_ID=xxx \
+$ AWS_REGION='eu-west-1' \
+  AWS_ACCESS_KEY_ID=xxx \
   AWS_SECRET_ACCESS_KEY=xxx \
   REKOGNITION_LABELS="house, person" \
   S3_BUCKET_NAME=person-blurring \
@@ -43,3 +44,4 @@ Lambda environment can be configured using [env variables](https://docs.aws.amaz
 * must have the execution role which has permissions to use AWS Rekognition
 * must have the execution role which has permissions to read and write to S3 bucket
 * must have the S3 trigger which doesn't lead to recursive invocation
+* S3 bucket and AWS Rekognition should be in the same region
