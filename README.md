@@ -14,11 +14,13 @@ $ npm install
 $ AWS_REGION='eu-west-1' \
   AWS_ACCESS_KEY_ID=xxx \
   AWS_SECRET_ACCESS_KEY=xxx \
-  REKOGNITION_LABELS="house, person" \
-  S3_BUCKET_NAME=person-blurring \
-  S3_OBJECT_KEY=samples/photo-1600897457790-4ee13456bfc5.jpeg \
+  REKOGNITION_LABELS='house, person' \
+  S3_BUCKET_NAME='person-blurring' \
+  S3_OBJECT_KEY='samples/photo-1600897457790-4ee13456bfc5.jpeg' \
   ./run.sh
 ```
+
+On a first run it will build the ImageMagick layer which is required for local development only.
 
 ## Configuration
 
@@ -44,4 +46,4 @@ Lambda environment can be configured using [env variables](https://docs.aws.amaz
 * must have the execution role which has permissions to use AWS Rekognition
 * must have the execution role which has permissions to read and write to S3 bucket
 * must have the S3 trigger which doesn't lead to recursive invocation
-* S3 bucket and AWS Rekognition should be in the same region
+* S3 bucket and AWS Rekognition must be in the same region
