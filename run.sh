@@ -2,10 +2,12 @@
 
 if [ ! -d "layers/im" ]; then
   # compile and copy the ImageMagick layer
-  # https://github.com/serverlesspub/imagemagick-aws-lambda-2
-  git clone https://github.com/serverlesspub/imagemagick-aws-lambda-2 layers/im/sources && cd layers/im/sources
-  make all && cd ../ && mv sources/result ./
-  rm -rf sources
+  repo_dir=$PWD
+  im_dir=$repo_dir/layers/im
+  git clone https://github.com/serverlesspub/imagemagick-aws-lambda-2 $im_dir/sources && cd $im_dir/sources
+  make all && cd $repo_dir
+  mv $im_dir/sources/result/* $im_dir
+  rm -rf $im_dir/sources
 fi
 
 docker run --rm \
