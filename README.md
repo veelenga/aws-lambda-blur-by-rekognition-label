@@ -12,10 +12,15 @@ or [`detectCustomLabels`](https://docs.aws.amazon.com/rekognition/latest/dg/API_
 
 ## Usage
 
-1. To hit `detectLabels` API:
+1. Install the deps:
 
 ``` sh
 $ npm install
+```
+
+2. To hit `detectLabels` API:
+
+``` sh
 $ AWS_REGION='eu-west-1' \
   AWS_ACCESS_KEY_ID=xxx \
   AWS_SECRET_ACCESS_KEY=xxx \
@@ -25,10 +30,9 @@ $ AWS_REGION='eu-west-1' \
   ./run.sh
 ```
 
-2. To hit `detectCustomLabels` API:
+3. To hit `detectCustomLabels` API:
 
 ``` sh
-$ npm install
 $ AWS_REGION='eu-west-1' \
   AWS_ACCESS_KEY_ID=xxx \
   AWS_SECRET_ACCESS_KEY=xxx \
@@ -39,7 +43,6 @@ $ AWS_REGION='eu-west-1' \
   ./run.sh
 ```
 
-
 On a first run it will build the ImageMagick layer which is required for local development only.
 If you don't want to run it locally, skip this step and deploy the lambda on AWS.
 
@@ -47,12 +50,12 @@ If you don't want to run it locally, skip this step and deploy the lambda on AWS
 
 Lambda environment can be configured using [env variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html):
 
-* `S3_BUCKET_NAME` - a bucket to take image from for processing.
-* `S3_OBJECT_KEY` - a key that identifies the object for processing.
-* `S3_DESTINATION_DIR` - directory to put processed objects to. Defaults to `blurred`.
-* `REKOGNITION_LABELS` - lambda will blur objects, labeled only by specified list of labels. Defaults to `Person`.
-* `REKOGNITION_MIN_CONFIDENCE` - changes the [MinConfidence](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html#API_DetectLabels_RequestSyntax) parameter to detect labels in AWS Rekognition. Defaults to `55`.
-* `REKOGNITION_PROJECT_VERSION_ARN` - the project version ARN of a model to hit the `detectCustomLabels` instead of `detectLabels` API. Defaults to `nil`.
+* `S3_BUCKET_NAME` - a bucket to take image from for processing. **Required if running locally**.
+* `S3_OBJECT_KEY` - a key that identifies the object for processing. **Required if running locally**.
+* `S3_DESTINATION_DIR` - directory to put processed objects to. **Defaults to `blurred`**.
+* `REKOGNITION_LABELS` - lambda will blur objects, labeled only by specified list of labels. **Defaults to `Person`**.
+* `REKOGNITION_MIN_CONFIDENCE` - changes the [MinConfidence](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html#API_DetectLabels_RequestSyntax) parameter to detect labels in AWS Rekognition. **Defaults to `55`**.
+* `REKOGNITION_PROJECT_VERSION_ARN` - the project version ARN of a model to hit the `detectCustomLabels` instead of `detectLabels` API. **Defaults to `nil`**.
 
 None of the variables above are required.
 
