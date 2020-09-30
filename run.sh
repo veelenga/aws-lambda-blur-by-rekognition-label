@@ -14,6 +14,7 @@ docker run --rm \
   -e AWS_REGION \
   -e AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY \
+  -e S3_DESTINAION_DIR \
   -e REKOGNITION_PROJECT_VERSION_ARN \
   -e REKOGNITION_LABELS \
   -v $PWD:/var/task \
