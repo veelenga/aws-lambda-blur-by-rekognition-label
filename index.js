@@ -54,7 +54,9 @@ function detectCustomLabels(response, image, callback) {
       callback(err);
     } else {
       let geometries = data.CustomLabels.reduce((acc, label) => (
-        REKOGNITION_LABELS.includes(label["Name"]) ? acc.concat(label.Geometry) : acc
+        REKOGNITION_LABELS.includes(label["Name"])
+          ? acc.concat({ BoundingBox: label.Geometry.BoundingBox, Confidence: label.Confidence })
+          : acc
       ), [])
 
       callback(null, response, geometries);
@@ -90,6 +92,14 @@ exports.handler = (event, context, callback) => {
                   height = box.Height * value.height,
                   left   = box.Left * value.width,
                   top    = box.Top * value.height;
+
+            let blurRatio = (width * height) / (value.width * value.height) * 100;
+
+            // Do not blur more than 50% of the image if the recognition
+            // confidence is lower than 90%
+            if (blurRatio > 50 && object.Confidence < 90) {
+              return;
+            }
 
             img.region(width, height, left, top).blur(0, 50);
           });
