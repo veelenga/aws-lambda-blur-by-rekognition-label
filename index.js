@@ -127,7 +127,6 @@ exports.handler = (event, context, callback) => {
   function (err) {
     if (err) {
       console.error(err);
-      console.log('here');
       callback(err);
     } else {
       callback(null, 'success');
