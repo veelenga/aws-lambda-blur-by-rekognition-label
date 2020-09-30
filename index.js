@@ -95,9 +95,11 @@ exports.handler = (event, context, callback) => {
 
             let blurRatio = (width * height) / (value.width * value.height) * 100;
 
-            // Do not blur more than 50% of the image if the recognition
-            // confidence is lower than 90%
             if (blurRatio > 50 && object.Confidence < 90) {
+              console.warn(
+                'Disallowed to blur more than 50% of the image ' +
+                'if the recognition confidence is lower than 90%'
+              );
               return;
             }
 
