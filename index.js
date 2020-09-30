@@ -7,7 +7,7 @@ const rekognition = new AWS.Rekognition();
 
 const S3_DESTINATION_DIR = process.env.S3_DESTINAION_DIR || 'blurred';
 const REKOGNITION_PROJECT_VERSION_ARN = process.env.REKOGNITION_PROJECT_VERSION_ARN;
-const REKOGNITION_MIN_CONFIDENCE = process.env.REKOGNITIN_MIN_CONFIDENCE || 55;
+const REKOGNITION_MIN_CONFIDENCE = process.env.REKOGNITION_MIN_CONFIDENCE || 55;
 const REKOGNITION_LABELS = (process.env.REKOGNITION_LABELS || 'Person')
   .split(',')
   .map((label) => label.trim())
