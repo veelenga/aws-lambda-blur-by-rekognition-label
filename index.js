@@ -91,7 +91,7 @@ exports.handler = (event, context, callback) => {
                   left   = box.Left * value.width,
                   top    = box.Top * value.height;
 
-            img.region(width, height, left, top).sepia();
+            img.region(width, height, left, top).blur(0, 50);
           });
 
           img.toBuffer(function(err, buffer) {
