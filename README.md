@@ -1,6 +1,6 @@
 # AWS Lambda Blur By Rekognition Label
 
-AWS Lambda to blurs objects detected by [AWS Rekognition](https://aws.amazon.com/rekognition/).
+AWS Lambda to blur objects detected by [AWS Rekognition](https://aws.amazon.com/rekognition/).
 
 Supports regular [`detectLabels`](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html)
 or [`detectCustomLabels`](https://docs.aws.amazon.com/rekognition/latest/dg/API_DetectCustomLabels.html) API.
